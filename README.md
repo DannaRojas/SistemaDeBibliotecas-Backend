@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema de bibliotecas - Backend
 
 Backend del taller de bibliotecas y libros.
@@ -34,3 +35,6 @@ Registrar una biblioteca:
 ```powershell
 curl.exe --request POST http://localhost:8080/bibliotecas --header "Content-Type: application/json" --data '{"nombre":"Biblioteca Sur","direccion":"Direccion de prueba","ciudad":"Ciudad de prueba"}'
 ```
+=======
+# SistemaDeBibliotecas-Backend
+>>>>>>> 99756857c8995692f19e064cb492be4b9cdcb2a7
