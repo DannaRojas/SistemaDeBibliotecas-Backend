@@ -1,7 +1,13 @@
 package co.edu.javeriana.danna.backend.dto;
 
 import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class BibliotecaRespuestaDto {
 
     private Long id;
@@ -9,33 +15,4 @@ public class BibliotecaRespuestaDto {
     private String direccion;
     private String ciudad;
     private List<LibroRespuestaDto> libros;
-
-    public BibliotecaRespuestaDto(Long id, String nombre, String direccion, String ciudad,
-                                  List<LibroRespuestaDto> libros) {
-        this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.libros = libros;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public List<LibroRespuestaDto> getLibros() {
-        return libros;
-    }
 }
