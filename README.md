@@ -1,40 +1,95 @@
-<<<<<<< HEAD
-# Sistema de bibliotecas - Backend
+# Sistema de Bibliotecas - Backend
 
-Backend del taller de bibliotecas y libros.
+Backend del taller práctico de bibliotecas y libros.
 
-## Requisitos implementados
+## Descripción
 
-- Entidades `Biblioteca` y `Libro` con relación uno a muchos.
-- Repositorios para Biblioteca y Libro.
-- Servicio y controlador REST de Biblioteca.
-- `POST /bibliotecas` para registrar una biblioteca.
-- `GET /bibliotecas` para consultar bibliotecas con sus libros asociados.
-- Datos iniciales de los libros solicitados.
+La aplicación permite registrar bibliotecas y consultar las bibliotecas existentes junto con los libros asociados a cada una.
 
-## Ejecutar
+La relación del modelo es:
 
-En la carpeta del proyecto:
+```text
+Una Biblioteca puede tener varios Libros.
+Cada Libro pertenece a una sola Biblioteca.
+```
 
-```powershell
+## Tecnologías
+
+- Java
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- H2
+
+## Estructura
+
+```text
+src/main/java/co/edu/javeriana/danna/backend
+│
+├── configuracion
+│   └── DatosInicialesConfiguracion.java
+├── controlador
+│   └── BibliotecaControlador.java
+├── dto
+│   ├── BibliotecaSolicitudDto.java
+│   ├── BibliotecaRespuestaDto.java
+│   └── LibroRespuestaDto.java
+├── entidad
+│   ├── Biblioteca.java
+│   └── Libro.java
+├── repositorio
+│   ├── BibliotecaRepositorio.java
+│   └── LibroRepositorio.java
+└── servicio
+    └── BibliotecaServicio.java
+```
+
+## Rutas disponibles
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| POST | `/bibliotecas` | Registra una biblioteca |
+| GET | `/bibliotecas` | Consulta las bibliotecas con sus libros asociados |
+
+## Ejecutar el proyecto
+
+Ubícate en la carpeta del backend:
+
+```cmd
+cd C:\Users\angie\Downloads\ParcialBackend\backend
+```
+
+Ejecuta:
+
+```cmd
 mvn spring-boot:run
 ```
 
-El backend queda disponible en `http://localhost:8080`.
+El backend estará disponible en:
 
-## Probar las rutas
+```text
+http://localhost:8080
+```
 
-Consultar las bibliotecas y sus libros:
+## Consultar bibliotecas
 
-```powershell
+```cmd
 curl.exe http://localhost:8080/bibliotecas
 ```
 
-Registrar una biblioteca:
+La respuesta incluye las bibliotecas y sus libros asociados.
 
-```powershell
-curl.exe --request POST http://localhost:8080/bibliotecas --header "Content-Type: application/json" --data '{"nombre":"Biblioteca Sur","direccion":"Direccion de prueba","ciudad":"Ciudad de prueba"}'
+## Registrar una biblioteca
+
+```cmd
+curl.exe -X POST "http://localhost:8080/bibliotecas" -H "Content-Type: application/json" -d "{\"nombre\":\"Biblioteca Sur\",\"direccion\":\"Direccion de prueba\",\"ciudad\":\"Ciudad de prueba\"}"
 ```
-=======
-# SistemaDeBibliotecas-Backend
->>>>>>> 99756857c8995692f19e064cb492be4b9cdcb2a7
+
+## Datos iniciales
+
+Al iniciar el backend se cargan estos libros:
+
+| Título | Autor | Año | Biblioteca |
+|---|---|---:|---|
+| Cien años de soledad | Gabriel García Márquez | 1967 | Biblioteca Central |
+| El coronel no tiene quien le escriba | Gabriel García Márquez | 1961 | Biblioteca Norte |
