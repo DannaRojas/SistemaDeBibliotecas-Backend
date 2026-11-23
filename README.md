@@ -1,7 +1,5 @@
 # Sistema de Bibliotecas - Backend
 
-Backend del taller práctico de bibliotecas y libros.
-
 ## Descripción
 
 La aplicación permite registrar bibliotecas y consultar las bibliotecas existentes junto con los libros asociados a cada una.
